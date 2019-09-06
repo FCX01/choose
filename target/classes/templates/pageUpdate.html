@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    function findhomepage() {
+        var name=$("#pagename").val();
+        $.ajax({
+            type: "post",
+            url: "/homePage/getHomePage",
+            data: name,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(result) {
+                console.log(result);
+                console.log(result.data)
+                $("#homepagearea").html(result.data);
+            },
+            error: function(){
+                alert("查询失败");
+            }
+        })
+
+
+    }
+</script>
+
+<input id="pagename"></input>
+<button type="button" onclick="findhomepage()">提交</button>
+
+<div>
+    <div id="homepagearea">
+
+    </div>
+</div>
+
+<hr>
+
+</body>
+</html>

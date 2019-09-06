@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/homeStyle.css" type="text/css" rel="stylesheet"/>
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="/js/axQuery.js"></script>
+    <script src="/js/globals.js"></script>
+    <script src="/js/axutils.js"></script>
+    <script src="/js/annotation.js"></script>
+    <script src="/js/axQuery.std.js"></script>
+    <script src="/js/doc.js"></script>
+    <script src="/js/document.js"></script>
+    <script src="/js/messagecenter.js"></script>
+    <script src="/js/events.js"></script>
+    <script src="/js/recording.js"></script>
+    <script src="/js/action.js"></script>
+    <script src="/js/expr.js"></script>
+    <script src="/js/geometry.js"></script>
+    <script src="/js/flyout.js"></script>
+    <script src="/js/ie.js"></script>
+    <script src="/js/model.js"></script>
+    <script src="/js/repeater.js"></script>
+    <script src="/js/sto.js"></script>
+    <script src="/js/utils.temp.js"></script>
+    <script src="/js/variables.js"></script>
+    <script src="/js/drag.js"></script>
+    <script src="/js/move.js"></script>
+    <script src="/js/visibility.js"></script>
+    <script src="/js/style.js"></script>
+    <script src="/js/adaptive.js"></script>
+    <script src="/js/tree.js"></script>
+    <script src="/js/init.temp.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/legacy.js"></script>
+    <script src="/js/viewer.js"></script>
+    <script src="/js/math.js"></script>
+</head>
+<body>
+<div id="base" class="">
+
+    <!-- Unnamed (矩形) -->
+    <div id="u0" class="ax_default box_1">
+        <div id="u0_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u2" class="ax_default _图片">
+        <img id="u2_img" class="img " src="/img/首页/u2.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u3" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u4" class="ax_default _图片">
+        <img id="u4_img" class="img " src="/img/首页/u4.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u5" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u6" class="ax_default label">
+        <div id="u6_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u7" class="text" style="visibility: visible;">
+            <p style="font-size:18px;"><span>中 通 科 技</span></p><p style="font-size:14px;"><span>TECHNOLOGY</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u8" class="ax_default _三级标题">
+        <div id="u8_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u9" class="text" style="visibility: visible;">
+            <p><span>首页</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u10" class="ax_default _三级标题">
+        <div id="u10_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u11" class="text" style="visibility: visible;">
+            <p><span>产品</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u12" class="ax_default _三级标题">
+        <div id="u12_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u13" class="text" style="visibility: visible;">
+            <p><span>关于我们</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u14" class="ax_default _三级标题">
+        <div id="u14_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u15" class="text" style="visibility: visible;">
+            <p><span>新闻动态</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u162" class="ax_default _三级标题">
+        <div id="u162_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u163" class="text" style="visibility: visible;">
+            <p>
+                <style type="text/css">
+                    a {text-decoration: none}
+                    a:active {
+                        color:#ec971f;
+                        text-decoration:none;} 
+                </style>
+
+                <a href = "JavaScript:void(0)" onclick = "createPage()">创建页面</a>
+            </p>
+        </div>
+    </div>
+
+        <script type="text/javascript">
+            function createPage(){
+                var title = prompt("请输入文章标题");
+                if(title != null && title != "")
+                {
+                    title=title.toString();
+                    console.log(title);
+                    $.ajax({
+                        async: false,
+                        type: 'POST',
+                        url: "/homePage/forVerifyName",
+                        data: {
+                            name:title
+                        },
+                        success: function (result) {
+                            console.log(result);
+                            if (result.errorMsg=="该模板名称已存在") {
+                                alert("模板名称已存在请重新命名！")
+                            }
+                            else if (result.errorMsg=="可以使用该名称") {
+                                var searchUrl =encodeURI("createPage?values=" + title);
+                                window.location.href=searchUrl;
+                            }
+
+
+                        },
+                        error: function (e) {
+                            alert("创建错误");
+                        }
+                    })
+
+                }
+                else if("" == title){
+                    alert("未输入标题！");
+                }
+                else if(null == title){}
+            }
+        </script>
+
+
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_default icon">
+        <img id="u16_img" class="img " src="/img/首页/u16.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u17" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (占位符) -->
+    <div id="u18" class="ax_default placeholder">
+        <img id="u18_img" class="img " src="/img/首页/u18.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u19" class="text" style="visibility: visible;">
+<!--            <p><span>视频+轮播图的形式：全屏展示</span></p><p><span>①视频一页，自动播放，播放完成后自动轮播到下一页</span></p><p><span>②数据一页，数据动态显示，加页面动画，数据动态展示完成后，自动轮播至视频页</span></p>-->
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u20" class="ax_default box_1">
+        <div id="u20_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u21" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u22" class="ax_default box_1">
+        <div id="u22_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u23" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u24" class="ax_default box_1">
+        <div id="u24_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u25" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (占位符) -->
+    <div id="u26" class="ax_default placeholder">
+        <img id="u26_img" class="img " src="/img/首页/u26.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u27" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u28" class="ax_default _图片">
+        <img id="u28_img" class="img " src="/img/首页/u28.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u29" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u30" class="ax_default icon">
+        <img id="u30_img" class="img " src="/img/首页/u30.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u31" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u32" class="ax_default _二级标题">
+        <div id="u32_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u33" class="text" style="visibility: visible;">
+            <p><span>企业介绍视频</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u34" class="ax_default _二级标题">
+        <div id="u34_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u35" class="text" style="visibility: visible;">
+            <p><span>用我们的产品&nbsp;&nbsp; 早就更多人的幸福</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u36" class="ax_default _文本段落">
+        <div id="u36_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u37" class="text" style="visibility: visible;">
+            <p><span>中通快递创建于2002年5月8日，是一家集快递、跨境、快运、商业、云仓、航空、 金融、智能、传媒等生态版块于一体的综合物流服务品牌企业。2016年10月27日在美国 纽约证券交易所上市，向全世界打开了一扇了解中国快递发展的“窗口”。</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u38" class="ax_default _一级标题">
+        <div id="u38_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u39" class="text" style="visibility: visible;">
+            <p><span>企业简介</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u40" class="ax_default box_1">
+        <div id="u40_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u41" class="text" style="visibility: visible;">
+            <p><span>查看更多</span></p>
+        </div>
+    </div>
+
+<!--    &lt;!&ndash; Unnamed (矩形) &ndash;&gt;-->
+<!--    <div id="u42" class="ax_default label">-->
+<!--        <div id="u42_div" class=""></div>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u43" class="text" style="visibility: visible;">-->
+<!--            <p><span>动态显示轮播进度</span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Unnamed (连接线) &ndash;&gt;-->
+<!--    <div id="u44" class="ax_default _连接线">-->
+<!--        <img id="u44_seg0" class="img " src="/img/首页/u44_seg0.png" alt=""/>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u45" class="text" style="display: none; visibility: hidden">-->
+<!--            <p><span></span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Unnamed (矩形) &ndash;&gt;-->
+<!--    <div id="u46" class="ax_default label">-->
+<!--        <div id="u46_div" class=""></div>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u47" class="text" style="visibility: visible;">-->
+<!--            <p><span>1、视频+文字的形式，背景图以中通人物，或科技中心吉祥物为背景</span></p><p><span>2、随着向下滚动，文字以动画的形式飞入</span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Unnamed (连接线) &ndash;&gt;-->
+<!--    <div id="u48" class="ax_default _连接线">-->
+<!--        <img id="u48_seg0" class="img " src="/img/首页/u48_seg0.png" alt=""/>-->
+<!--        <img id="u48_seg1" class="img " src="/img/首页/u48_seg1.png" alt=""/>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u49" class="text" style="display: none; visibility: hidden">-->
+<!--            <p><span></span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Unnamed (矩形) &ndash;&gt;-->
+<!--    <div id="u50" class="ax_default label">-->
+<!--        <div id="u50_div" class=""></div>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u51" class="text" style="visibility: visible;">-->
+<!--            <p><span>按钮，鼠标移入按钮显示白色</span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- Unnamed (矩形) -->
+    <div id="u52" class="ax_default _一级标题">
+        <div id="u52_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u53" class="text" style="visibility: visible;">
+            <p><span>科技赋能</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u54" class="ax_default _一级标题">
+        <div id="u54_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u55" class="text" style="visibility: visible;">
+            <p><span>信息安全</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u56" class="ax_default _图片">
+        <img id="u56_img" class="img " src="/img/首页/u56.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u57" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u58" class="ax_default _三级标题">
+        <div id="u58_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u59" class="text" style="visibility: visible;">
+            <p><span>标题</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u60" class="ax_default label">
+        <div id="u60_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u61" class="text" style="visibility: visible;">
+            <p><span>简介</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u62" class="ax_default _一级标题">
+        <div id="u62_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u63" class="text" style="visibility: visible;">
+            <p><span>平台实力</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u64" class="ax_default _一级标题">
+        <div id="u64_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u65" class="text" style="visibility: visible;">
+            <p><span>新闻动态</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u66" class="ax_default _图片">
+        <img id="u66_img" class="img " src="/img/首页/u66.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u67" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+<!--    &lt;!&ndash; Unnamed (文本段落) &ndash;&gt;-->
+<!--    <div id="u68" class="ax_default _文本段落">-->
+<!--        <img id="u68_img" class="img " src="/img/首页/u68.png" alt=""/>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u69" class="text" style="visibility: visible;">-->
+<!--            <p><span>随着向下滚动，每个模块以动画的形式飞入</span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Unnamed (连接线) &ndash;&gt;-->
+<!--    <div id="u70" class="ax_default _连接线">-->
+<!--        <img id="u70_seg0" class="img " src="/img/首页/u70_seg0.png" alt=""/>-->
+<!--        <img id="u70_seg1" class="img " src="/img/首页/u70_seg1.png" alt=""/>-->
+<!--        &lt;!&ndash; Unnamed () &ndash;&gt;-->
+<!--        <div id="u71" class="text" style="display: none; visibility: hidden">-->
+<!--            <p><span></span></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- Unnamed (图片) -->
+    <div id="u72" class="ax_default _图片">
+        <img id="u72_img" class="img " src="/img/首页/u72.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u73" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u74" class="ax_default label">
+        <div id="u74_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u75" class="text" style="visibility: visible;">
+            <p><span>公司地址：上海市青浦区华新镇华志路1685号</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (文本段落) -->
+    <div id="u76" class="ax_default _文本段落">
+        <img id="u76_img" class="img " src="/img/首页/u76.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u77" class="text" style="visibility: visible;">
+            <p><span>邮箱：ztohr@zto.cn</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u78" class="ax_default _图片">
+        <img id="u78_img" class="img " src="/img/首页/u2.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u79" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u80" class="ax_default _图片">
+        <img id="u80_img" class="img " src="/img/首页/u80.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u81" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u82" class="ax_default label">
+        <div id="u82_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u83" class="text" style="visibility: visible;">
+            <p style="font-size:18px;"><span>中 通 科 技</span></p><p style="font-size:14px;"><span>TECHNOLOGY</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (垂直线) -->
+    <div id="u84" class="ax_default line">
+        <img id="u84_img" class="img " src="/img/首页/u84.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u85" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u86" class="ax_default label">
+        <div id="u86_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u87" class="text" style="visibility: visible;">
+            <p><span>产品</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u88" class="ax_default line">
+        <img id="u88_img" class="img " src="/img/首页/u88.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u89" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u90" class="ax_default label">
+        <div id="u90_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u91" class="text" style="visibility: visible;">
+            <p><span>解决方案</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u92" class="ax_default line">
+        <img id="u92_img" class="img " src="/img/首页/u88.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u93" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u94" class="ax_default label">
+        <div id="u94_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u95" class="text" style="visibility: visible;">
+            <p><span>关于我们</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u96" class="ax_default line">
+        <img id="u96_img" class="img " src="/img/首页/u88.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u97" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u98" class="ax_default label">
+        <div id="u98_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u99" class="text" style="visibility: visible;">
+            <p><span>科技形象</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u100" class="ax_default label">
+        <div id="u100_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u101" class="text" style="visibility: visible;">
+            <p><span>品牌事件</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u102" class="ax_default label">
+        <div id="u102_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u103" class="text" style="visibility: visible;">
+            <p><span>企业文化</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u104" class="ax_default label">
+        <div id="u104_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u105" class="text" style="visibility: visible;">
+            <p><span>产品名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u106" class="ax_default label">
+        <div id="u106_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u107" class="text" style="visibility: visible;">
+            <p><span>产品名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u108" class="ax_default label">
+        <div id="u108_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u109" class="text" style="visibility: visible;">
+            <p><span>产品名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u110" class="ax_default label">
+        <div id="u110_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u111" class="text" style="visibility: visible;">
+            <p><span>产品名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u112" class="ax_default label">
+        <div id="u112_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u113" class="text" style="visibility: visible;">
+            <p><span>解决方案名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u114" class="ax_default label">
+        <div id="u114_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u115" class="text" style="visibility: visible;">
+            <p><span>解决方案名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u116" class="ax_default label">
+        <div id="u116_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u117" class="text" style="visibility: visible;">
+            <p><span>解决方案名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u118" class="ax_default label">
+        <div id="u118_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u119" class="text" style="visibility: visible;">
+            <p><span>解决方案名称</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u120" class="ax_default label">
+        <div id="u120_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u121" class="text" style="visibility: visible;">
+            <p><span>新闻动态</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u122" class="ax_default line">
+        <img id="u122_img" class="img " src="/img/首页/u88.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u123" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (文本段落) -->
+    <div id="u124" class="ax_default _文本段落">
+        <img id="u124_img" class="img " src="/img/首页/u124.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u125" class="text" style="visibility: visible;">
+            <p><span>中通版权所有 中通快递©版权所有 沪ICP备13044869号</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u126" class="ax_default _图片">
+        <img id="u126_img" class="img " src="/img/首页/u126.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u127" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u128" class="ax_default label">
+        <div id="u128_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u129" class="text" style="visibility: visible;">
+            <p><span>关注中通科技微信公众号</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u130" class="ax_default label">
+        <div id="u130_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u131" class="text" style="visibility: visible;">
+            <p><span>公司动态</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u132" class="ax_default label">
+        <div id="u132_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u133" class="text" style="visibility: visible;">
+            <p><span>技术文章</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u134" class="ax_default label">
+        <div id="u134_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u135" class="text" style="visibility: visible;">
+            <p><span>联系我们</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u136" class="ax_default label">
+        <div id="u136_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u137" class="text" style="visibility: visible;">
+            <p><span>加入我们</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u138" class="ax_default label">
+        <div id="u138_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u139" class="text" style="visibility: visible;">
+            <p><span>中通快递官网</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u140" class="ax_default label">
+        <div id="u140_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u141" class="text" style="visibility: visible;">
+            <p><span>关于我们</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (垂直线) -->
+    <div id="u142" class="ax_default line">
+        <img id="u142_img" class="img " src="/img/首页/u142.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u143" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (垂直线) -->
+    <div id="u144" class="ax_default line">
+        <img id="u144_img" class="img " src="/img/首页/u142.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u145" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (垂直线) -->
+    <div id="u146" class="ax_default line">
+        <img id="u146_img" class="img " src="/img/首页/u142.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u147" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u148" class="ax_default label">
+        <div id="u148_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u149" class="text" style="visibility: visible;">
+            <p><span>商务合作</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (垂直线) -->
+    <div id="u150" class="ax_default line">
+        <img id="u150_img" class="img " src="/img/首页/u142.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u151" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u152" class="ax_default _图片">
+        <img id="u152_img" class="img " src="/img/首页/u56.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u153" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u154" class="ax_default _三级标题">
+        <div id="u154_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u155" class="text" style="visibility: visible;">
+            <p><span>标题</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u156" class="ax_default label">
+        <div id="u156_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u157" class="text" style="visibility: visible;">
+            <p><span>简介</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u158" class="ax_default _图片">
+        <img id="u158_img" class="img " src="/img/首页/u158.png" alt=""/>
+        <!-- Unnamed () -->
+        <div id="u159" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u160" class="ax_default _一级标题">
+        <div id="u160_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u161" class="text" style="visibility: visible;">
+            <p><span>技术文章</span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

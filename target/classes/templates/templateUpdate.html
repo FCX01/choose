@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function getAlltemplate() {
+        $("#selectdiv").html('');           //div赋值
+        $.ajax({
+            type: "post",
+            url: "/template/getAllTemplate",
+            data: "",
+            dataType: "json",
+            contentType: "application/json",
+            success: function(result) {     //请求成功执行result
+
+//stringify()用于从一个对象解析出字符串
+
+                var AllTemp1 = result.data; //模板数组
+                console.log(AllTemp1);
+
+                $("#selectdiv").append('<form role="form" th:action="" method="get" class="registration-form" id="selectform" enctype="multipart/form-data"></form>');
+                for(var i=0;i<AllTemp1.length;i++){
+
+                    var AllTemp = $.parseJSON(AllTemp1[i]);
+                    console.log(AllTemp)
+                    var imageurltemp=AllTemp.imageUrl;
+                    imageurltemp=imageurltemp.toString();
+                    var imageurl=imageurltemp.substring(2);
+
+
+                    $("#selectform").append('<div class="col-sm-6 layout-box"> ' +
+                        '<p>'+
+                        '<label for="'+AllTemp.name+'"> ' +
+                        '<img src="'+imageurl+'" > ' +
+                        '<input id="'+AllTemp.id+'" type="radio" name="temp" value="'+AllTemp.name+'" >' +
+                        ''+AllTemp.name+' ' +
+                        '</label></p></div> ');
+
+                }
+
+                $("#selectform").append('<button type="button" class="btn" onclick="tianjia()" data-dismiss="modal">Submit!</button>');
+            },
+            error: function(){          //请求失败
+                alert("查询失败");
+            }
+
+        });
+
+    }
+
+</script>
+
+
+<button type="button" onclick="getAlltemplate()">提交</button>
+
+<div class="modal-body" id="selectdiv">
+</div>
+
+
+
+</body>
+</html>

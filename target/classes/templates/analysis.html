@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解析页面</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Javascript -->
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/new_js/newanalysis.js"></script>
+
+</head>
+
+<style>
+
+    .form-control {
+        width: 90%;
+        height: 200px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #555;
+        vertical-align: middle;
+        background-color: #FFF;
+        background-image: none;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    }
+    textarea.form-control {
+        height: 200px;
+    }
+</style>
+
+<style>
+    .txtCenter{
+        text-align:center;
+    }
+</style>
+
+<body>
+
+<div align ="center">
+    <div id="analysisarea" >
+        <label>请在下方填入需要解析的HTML代码</label><br>
+        <textarea  id="analysistextarea" placeholder="请输入所需解析的HTML代码……" class="form-control" style="resize: none;"></textarea>
+        <br>
+        <div class="top-big-link">
+            <a  class="btn btn-link-1" onclick="analysistemp()">解析</a>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div style="display:none;" id="name">
+    <label>名称：</label>
+    <input type="text" name="bigname" id="input1" >
+</div>
+<div id="selectdiv" class="txtCenter" style="display:none;">
+    <form id="selectform">
+
+    </form>
+
+    <input id="imageurl" type="hidden" value="">
+    <hr>
+</div>
+
+
+<div align ="center" id="imagearea" style="display:none;">
+    <label>请在下方上传模板缩略图建议大小（***）</label><br>
+    <form enctype="multipart/form-data" id="uploadForm">
+        <br>
+        <input class="top-big-link" type="file" name="fileName" id="filename" accept="image/png, image/jpeg, image/jpg" onchange="checkImage()">
+        <br>
+        <div id="showImage"></div>
+        <div id="onLoadImage"></div>
+        <br>
+
+        <br>
+        <hr>
+    </form>
+</div>
+
+<div id="save" class="txtCenter" style="display:none;">
+    <div class="top-big-link">
+<!--        <a  class="btn btn-link-1" onclick="uptemplate()">保存模板</a>-->
+        <a  class="btn btn-link-1" onclick="checkname()">保存模板</a>
+    </div>
+
+</div>
+</body>
+
+</html>

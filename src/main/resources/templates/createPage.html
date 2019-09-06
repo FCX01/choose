@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Templates</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Javascript -->
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/new_js/new02temp.js"></script>
+
+</head>
+
+<style>
+    img{ width:100px;height:100px; }
+    .a-upload {
+        padding: 4px 10px;
+        height: 30px;
+        line-height: 20px;
+        position: relative;
+        cursor: pointer;
+        color: #888;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1
+    }
+
+    .a-upload  input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer
+    }
+
+    .a-upload:hover {
+        color: #444;
+        background: #eee;
+        border-color: #ccc;
+        text-decoration: none
+    }
+</style>
+
+<body>
+
+<div class="btn-link-1">
+    <span>标题：</span>
+<!--    <input type="button" id="show"value="">-->
+<!--    <span id="show"></span>-->
+    <label id="show"></label>
+</div>
+
+<br>
+
+<div id="homepagename">
+
+</div>
+
+<!--模板选择-->
+    <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title" id="modal-register-label">选择模板</h3>
+                </div>
+
+                <div class="modal-body" id="selectdiv">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="TemplateArea">
+    </div>
+
+<!--添加、编辑、提交-->
+    <div class="top-content">
+        <div class="row">
+            <div class="top-big-link">
+                <a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register" onclick="getAlltemplate()">+</a>
+            </div>
+        </div>
+    </div>
+    <div class="top-content">
+        <div class="row">
+            <div class="top-big-link">
+                <a class="btn btn-link-1" onclick="imageup()">提交</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var url=window.location.search; //获取url中"?"符后的字串
+    if(url.indexOf("?")!=-1){
+
+        var handTitle =url.split("=");        //截取 url中的“=”,获得“=”后面的参数
+        var  handTitle =decodeURI(handTitle[1]);
+    }
+    console.log(handTitle);
+    document.getElementById("show").innerHTML =  handTitle;
+    $("#homepagename").append('<input id="templatename" name="templatename" value="'+handTitle+'" type="hidden"></input>');
+</script>
+</html>

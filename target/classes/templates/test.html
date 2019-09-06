@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/css/circles.css" rel="stylesheet" type="text/css" media="all"  /><!-- circles-css --><!-- for skills section-->
+
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- light-box -->
+    <link rel="stylesheet" href="/css/poposlides.css">
+</head>
+<body>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    function findhomepage() {
+       var name=$("#pagename").val();
+        $.ajax({
+            type: "post",
+            url: "/homePage/getHomePage",
+            data: name,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(result) {
+               console.log(result);
+               console.log(result.data)
+                $("#homepagearea").html(result.data);
+            },
+            error: function(){
+                alert("查询失败");
+            }
+        })
+
+
+    }
+</script>
+
+<input id="pagename"></input>
+<button type="button" onclick="findhomepage()">提交</button>
+
+<div>
+    <div id="homepagearea">
+
+    </div>
+</div>
+
+<hr>
+
+
+</body>
+
+</html>
